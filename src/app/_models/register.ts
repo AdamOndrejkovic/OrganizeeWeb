@@ -1,4 +1,4 @@
 export class Register {
-  name: string;
-  password: string;
+  name!: string;
+  password!: string;
 }

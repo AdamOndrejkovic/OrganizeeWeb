@@ -7,6 +7,8 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { TodoOverviewComponent } from './todo-overview/todo-overview.component';
 import { AddEditComponent } from './add-edit/add-edit.component';
+import {AppRoutingModule} from "./app-routing.module";
+import { NoAccessComponent } from './no-access/no-access.component';
 
 @NgModule({
   declarations: [
@@ -15,10 +17,12 @@ import { AddEditComponent } from './add-edit/add-edit.component';
     LoginComponent,
     RegisterComponent,
     TodoOverviewComponent,
-    AddEditComponent
+    AddEditComponent,
+    NoAccessComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

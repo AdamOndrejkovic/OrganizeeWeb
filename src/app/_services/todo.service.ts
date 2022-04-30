@@ -9,19 +9,19 @@ export class TodoService {
   }
 
   create(todo: Todo){
-    return this.http.post(`${environment.apiUrl}/Todo`, todo);
+    return this.http.post<Todo>(`${environment.apiUrl}/Todo`, todo);
   }
 
   getAll() {
-    return this.http.get(`${environment.apiUrl}/Todo`);
+    return this.http.get<Todo>(`${environment.apiUrl}/Todo`);
   }
 
   getById(id: number) {
-    return this.http.get(`${environment.apiUrl}/Todo/${id}`);
+    return this.http.get<Todo>(`${environment.apiUrl}/Todo/${id}`);
   }
 
   updateTodo(todo: Todo) {
-    return this.http.put(`${environment.apiUrl}/Todo`, todo);
+    return this.http.put<Todo>(`${environment.apiUrl}/Todo`, todo);
   }
 
   deleteTodo(id: number) {
