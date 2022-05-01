@@ -10,7 +10,7 @@ pipeline {
         stage("Start up"){
             when {
                 anyOf {
-                    changeset "/"
+                    changeset "**"
                 }
             }
             steps {
@@ -22,7 +22,7 @@ pipeline {
         }
         stage("Build") {
             when {
-                        changeset "/"
+                        changeset "**"
                     }
                     steps {
                         sh "docker-compose --env-file config/Test.env build frontend"
