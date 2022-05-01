@@ -25,7 +25,7 @@ pipeline {
                         changeset "**"
                     }
                     steps {
-                        sh "docker-compose --env-file config/Test.env build frontend"
+                        sh "docker-compose --env-file config/Test.env build"
                     }
         }
         stage("Clean containers") {
