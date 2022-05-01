@@ -25,7 +25,7 @@ pipeline {
                         changeset "**"
                     }
                     steps {
-                        sh "docker-compose --env-file config/Test.env build"
+                        sh "docker-compose --env-file config/Test.env build OrganizeeWeb"
                     }
         }
         stage("Clean containers") {
