@@ -1,0 +1,9 @@
+.dashboard-box {
+  @apply bg-gray-300 w-screen h-screen
+}
+
+#logout {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+}
