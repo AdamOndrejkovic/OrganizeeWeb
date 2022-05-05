@@ -9,6 +9,7 @@ import { TodoOverviewComponent } from './todo-overview/todo-overview.component';
 import { AddEditComponent } from './add-edit/add-edit.component';
 import {AppRoutingModule} from "./app-routing.module";
 import { NoAccessComponent } from './no-access/no-access.component';
+import {ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -20,10 +21,11 @@ import { NoAccessComponent } from './no-access/no-access.component';
     AddEditComponent,
     NoAccessComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        ReactiveFormsModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
