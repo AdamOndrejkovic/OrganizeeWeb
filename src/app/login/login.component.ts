@@ -12,7 +12,7 @@ import {catchError, throwError} from "rxjs";
 })
 export class LoginComponent implements OnInit {
 
-  loginForm: FormGroup;
+  loginForm!: FormGroup;
 
   constructor(private formBuilder: FormBuilder, private _router:Router, private _auth: AuthService) { }
 
@@ -46,6 +46,14 @@ export class LoginComponent implements OnInit {
         return throwError(err)
       })
     )
+      .subscribe(user => {
+        if (user){
+          this.loginForm.disable();
+          this._router.navigate(['home']).then(r => r);
+          this.loginForm.reset()
+          this.loginForm.enable()
+        }
+      });
   }
 
 }
