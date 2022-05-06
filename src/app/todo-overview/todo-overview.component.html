@@ -1,1 +1,33 @@
-<p>todo-overview works!</p>
+<div class="w-full h-screen">
+  <h1 class="text-center pt-6 mb-8">Organizee Dashboard</h1>
+  <div class="h-4/5 w-5/6 py-8 bg-white mx-auto">
+    <div class="flex items-center justify-center mb-6">
+        <span class="w-36 title">
+          Title
+        </span>
+      <span class="w-96 title">
+          Description
+        </span>
+      <span class="w-36 title">
+          Completion
+        </span>
+      <span class="w-8">
+
+        </span>
+    </div>
+    <div *ngFor="let todo of allTodos" class="flex items-center justify-center overflow-auto overflow-x-hidden">
+        <span class="w-36">
+          {{ todo.title }}
+        </span>
+      <span class="w-96">
+          {{ todo.description }}
+        </span>
+      <span class="w-36">
+          {{ todo.complete ? 'Complete' : 'Not finished' }}
+        </span>
+      <span>
+          <button (click)="delete(todo.id)"><img src="../../assets/delete.png" alt="Delete" class="w-8 h-8"></button>
+        </span>
+    </div>
+  </div>
+</div>

@@ -18,4 +18,9 @@ export class TodoOverviewComponent implements OnInit {
       .subscribe(products => this.allTodos = products)
   }
 
+  delete(id: number) {
+    this.todoService.deleteTodo(id).pipe().subscribe()
+    this.allTodos = this.allTodos.filter( (item: { id: number; }) => item.id != id)
+  }
+
 }

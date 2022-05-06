@@ -18,7 +18,7 @@ export class AddEditComponent implements OnInit {
 
   ngOnInit(): void {
     this.todoForm =  this.formBuilder.group({
-      userId: [ this._auth.getUser() , [Validators.required]],
+      userId: [ this._auth.getUser()?.id , [Validators.required]],
       title: ['', [Validators.required]],
       description: ['', [Validators.required]],
       complete: [false, [Validators.required]],
@@ -48,5 +48,6 @@ export class AddEditComponent implements OnInit {
       .subscribe({
 
       })
+    this.todoForm.reset()
   }
 }
