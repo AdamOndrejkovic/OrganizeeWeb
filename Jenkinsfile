@@ -34,7 +34,7 @@ pipeline {
                 sh 'sudo chmod +x setup_k6.sh'
                 sh 'sudo ./setup_k6.sh' */
                 echo 'Running K6 performance tests...'
-                // sh 'k6 run k6-test/load-test.js'
+                sh 'k6 run k6-test/load-test.js'
             }
         }
         stage("Clean containers") {
