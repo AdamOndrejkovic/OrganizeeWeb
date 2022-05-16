@@ -24,7 +24,7 @@ export class ChartComponent implements OnInit {
           label: 'My First Dataset',
           data: [50, 50, 100],
           backgroundColor: [
-            'rgb(255, 99, 133)',
+            'rgb(255, 99, 143)',
             'rgb(54, 162, 235)',
             'rgb(255, 205, 86)'
           ],
