@@ -17,7 +17,7 @@ pipeline {
                 withCredentials([string(credentialsId: 'DiscordWebHook', variable: 'WEBHOOK_URL')]) {
                     discordSend description: "Organizee Web Pipeline Start", footer: env.COMMITMSG , link: env.Build_URL, webhookURL: "${WEBHOOK_URL}"
                     buildDescription env.COMMITMSG
-                }
+                } 
             }
         }
         stage("Build") {
