@@ -1,4 +1,4 @@
 FROM nginx
-COPY dist /usr/share/nginx/html
+COPY dist/organizee-web /usr/share/nginx/html
 COPY expose-env.sh /docker-entrypoint.d/40-expose-env.sh
 RUN chmod 777 /docker-entrypoint.d/40-expose-env.sh
