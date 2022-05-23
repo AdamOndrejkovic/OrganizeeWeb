@@ -31,7 +31,7 @@ pipeline {
                     }
         }
         stage("TestCafe"){
-            stepss {
+            steps {
                 sh "npm install testcafe testcafe-reporter-xunit"
                 sh "export DISPLAY=:1"
                 sh "node_modules/.bin/testcafe chrome tests/**/* -r xunit:res.xml"
