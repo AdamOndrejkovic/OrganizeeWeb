@@ -63,6 +63,16 @@ pipeline {
                 sh "echo 'Pipeline finished!'"
                 discordSend description: "Organizee Web Pipeline Success", footer: "Pipeline finished successfully", link: env.Build_URL, result: currentBuild.currentResult, title: JOB_NAME, webhookURL: "${WEBHOOK_URL}"
             }
+            sh 'npm install'
+            sh 'npm run lighthouse'
+            publishHTML (target: [
+                allowMissing: false,
+                alwaysLinkToLastBuild: false,
+                keepAll: true,
+                reportDir: '.',
+                reportFiles: 'lighthouse-report.html',
+                reportName: "Lighthouse"
+            ])
         }
         failure {
             withCredentials([string(credentialsId: 'DiscordWebHook', variable: 'WEBHOOK_URL')]) {
