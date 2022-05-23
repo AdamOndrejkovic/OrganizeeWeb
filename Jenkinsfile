@@ -25,6 +25,7 @@ pipeline {
                         changeset "**"
                     }
                     steps {
+                        sh "npm run build"
                         sh "docker-compose --env-file config/Test.env build"
                     }
         }
