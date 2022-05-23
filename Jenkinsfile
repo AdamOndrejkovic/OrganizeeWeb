@@ -63,6 +63,7 @@ pipeline {
                 sh "echo 'Pipeline finished!'"
                 discordSend description: "Organizee Web Pipeline Success", footer: "Pipeline finished successfully", link: env.Build_URL, result: currentBuild.currentResult, title: JOB_NAME, webhookURL: "${WEBHOOK_URL}"
             }
+            sh "wget https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm yum -y install google-chrome*.rpm"
             sh 'npm install'
             sh 'npm run lighthouse'
             publishHTML (target: [
