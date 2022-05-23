@@ -28,20 +28,15 @@ pipeline {
                         sh "npm install"
                         sh "npm run build"
                         sh "docker-compose --env-file config/Test.env build"
-                    }
-                steps {
-                    sh "npm install testcafe testcafe-reporter-xunit"
+                        sh "npm install testcafe testcafe-reporter-xunit"
                     sh "export DISPLAY=:1"
                     sh "node_modules/.bin/testcafe chrome tests/**/* -r xunit:res.xml"
-                }
-                steps {
                     echo "Register testing"
                     sh "testcafe chrome testCafe/register.test.js"
-                }
-                steps {
                     echo "Login testing"
                     sh "testcafe chrome testCafe/login.test.js"
-                }
+            }
+               
         }
         stage("Clean containers") {
             steps {
