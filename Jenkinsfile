@@ -28,7 +28,6 @@ pipeline {
                         sh "npm install"
                         sh "npm run build"
                         sh "docker-compose --env-file config/Test.env build"
-                        sh "npm install -g testcafe"
                         sh "npm install testcafe testcafe-reporter-xunit"
                         echo "Register testing"
                         sh "testcafe chrome testCafe/register.test.js"
