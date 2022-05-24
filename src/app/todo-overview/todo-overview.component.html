@@ -23,7 +23,10 @@
           {{ todo.description }}
         </span>
       <span class="w-36">
-          {{ todo.complete ? 'Complete' : 'Not finished' }}
+        <select (change)="changed($event, todo)" >
+          <option value="false" [attr.selected]="!todo.complete ? true : null">Not Complete</option>
+          <option value="true" [attr.selected]="todo.complete ? true : null">Complete</option>
+        </select>
         </span>
       <span>
           <button (click)="delete(todo.id)"><img src="../../assets/delete.png" alt="Delete" class="w-8 h-8"></button>

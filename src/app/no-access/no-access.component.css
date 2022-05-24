@@ -1,0 +1,29 @@
+.error {
+    width: 100vw;
+    height: 100vh;
+}
+
+.image {
+    background-image: url("../../assets/no-entry.jpg");
+    height: 650px;
+    width: 550px;
+    background-size: cover;
+    margin: auto;
+}
+
+.buttons {
+    width: 350px;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    margin: 15px auto;    
+}
+
+.buttons a {
+    margin: auto;
+    width: 100px;
+    text-align: center;
+    padding: 5px 10px;
+    border-radius: 15px;
+    background-color: bisque;
+}

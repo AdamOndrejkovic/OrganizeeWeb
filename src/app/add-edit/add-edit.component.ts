@@ -4,6 +4,7 @@ import {AuthService} from "../_services/auth.service";
 import {TodoDto} from "../dto/todo.dto";
 import {TodoService} from "../_services/todo.service";
 import {first} from "rxjs";
+import { Todo } from '../_models/todo';
 
 @Component({
   selector: 'app-add-edit',
@@ -45,8 +46,7 @@ export class AddEditComponent implements OnInit {
     const todo = this.todoForm.value as TodoDto
     this._todo.create(todo)
       .pipe(first())
-      .subscribe({
-
+      .subscribe((data: Todo) => {
       })
     this.todoForm.reset()
   }
